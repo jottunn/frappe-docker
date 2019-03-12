@@ -1,0 +1,5 @@
+#Pycharm stuff
+.idea/
+
+#Misc
+frappe-bench/*

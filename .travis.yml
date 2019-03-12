@@ -1,0 +1,28 @@
+language: python
+python:
+  - "2.7"
+env:
+  - DOCKER_COMPOSE_VERSION: 1.22.0
+
+services:
+  - docker
+
+install:
+  - chmod ugo+x ./dbench
+  - ./dbench setup docker
+  - ./dbench init frappe-bench
+  - ./dbench new-site site1.local
+  - sudo ./dbench setup hosts
+  - pip install --upgrade virtualenv
+  - virtualenv -p python3 testenv
+  - source testenv/bin/activate
+  - pip install requests
+
+script:
+  - docker-compose ps | grep -i frappe
+  - docker-compose ps | grep -i redis-cache
+  - docker-compose ps | grep -i redis-queue
+  - docker-compose ps | grep -i redis-socketio
+  - docker-compose ps | grep -i mariadb
+  - python test.py
+  - docker-compose stop
