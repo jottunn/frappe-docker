@@ -85,7 +85,7 @@ Express dependency between services, which has two effects:
 
 * Clone this repo and change your working directory to frappe_docker
 
-		git clone --depth 1 https://github.com/frappe/frappe_docker.git
+		git clone --depth 1 https://github.com/frappe/frappe-docker.git
 		cd frappe_docker
 
 * Build the container and install bench inside the container.
