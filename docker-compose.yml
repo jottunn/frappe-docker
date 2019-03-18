@@ -40,9 +40,6 @@ services:
     volumes:
       - ./frappe-bench:/home/frappe/frappe-bench:rw
       - ./conf/frappe:/home/frape/frappe-conf
-#      - ./conf/redis-conf.d/redis_cache.conf:/home/frappe/frappe-bench/config/redis_cache.conf
-#      - ./conf/redis-conf.d/redis_queue.conf:/home/frappe/frappe-bench/config/redis_queue.conf
-#      - ./conf/redis-conf.d/redis_socketio.conf:/home/frappe/frappe-bench/config/redis_socketio.conf
     ports:
       - "8000:8000" # Webserver Port
       - "9000:9000" # Socketio Port
