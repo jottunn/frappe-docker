@@ -40,6 +40,8 @@ services:
     volumes:
       - ./frappe-bench:/home/frappe/frappe-bench:rw
       - ./conf/frappe:/home/frape/frappe-conf
+    env_file:
+      - conf/frappe/environment.env
     ports:
       - "8000:8000" # Webserver Port
       - "9000:9000" # Socketio Port
