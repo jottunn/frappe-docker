@@ -38,11 +38,8 @@ Expose port 3307 inside the container on port 3307 on ALL local host interfaces.
 
 ```
 volumes:
-     - ./frappe-bench:/home/frappe/frappe-bench
-     - ./conf/mariadb-conf.d:/etc/mysql/conf.d
-     - ./redis-conf/redis_socketio.conf:/etc/conf.d/redis.conf
-     - ./redis-conf/redis_queue.conf:/etc/conf.d/redis.conf
-     - ./redis-conf/redis_cache.conf:/etc/conf.d/redis.conf
+      - ./frappe-bench:/home/frappe/frappe-bench:rw
+      - ./conf/frappe:/home/frape/frappe-conf
 ```
 Exposes a directory inside the host to the container.
 
@@ -104,7 +101,8 @@ Express dependency between services, which has two effects:
 ##### Make sure your current directory is frappe_docker
 1.	First time setup
 
-		./dbench init
+		./dbench init-frappe
+		./dbench init-erpnext(if you want to install the erpnext app)
 
 2.	Command to be executed everytime after starting your containers
 
