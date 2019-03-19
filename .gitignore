@@ -3,3 +3,6 @@
 
 #Misc
 frappe-bench/*
+
+#env files
+**.env
