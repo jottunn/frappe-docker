@@ -10,7 +10,7 @@ RUN apt-get update \
      libssl-dev libjpeg62-turbo-dev libxrender1 libxext6 libfreetype6-dev zlib1g-dev libsasl2-dev libldap2-dev libtiff5-dev \
      xfonts-75dpi xfonts-base tcl8.6-dev tk8.6-dev curl git sudo software-properties-common nano nginx yarn cron wkhtmltopdf \
      mariadb-client mariadb-common \
-  && curl https://deb.nodesource.com/node_10.x/pool/main/n/nodejs/nodejs_10.10.0-1nodesource1_amd64.deb > node.deb \
+  && curl https://deb.nodesource.com/node_10.x/pool/main/n/nodejs/nodejs_10.15.3-1nodesource1_amd64.deb > node.deb \
   && dpkg -i node.deb \
   && rm node.deb \
   && npm install -g yarn \
