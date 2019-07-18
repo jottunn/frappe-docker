@@ -10,7 +10,7 @@ if [[ $# -eq 0 ]]; then
     docker exec -it frappe bash
 elif [[ "$1" == 'init-frappe' ]]; then
     run root "chown -R frappe:frappe /home/frappe"
-    run frappe "cd .. && bench init frappe-bench --python python3 --ignore-exist --skip-redis-config-generation --frappe-branch=master"
+    run frappe "cd .. && bench init frappe-bench --python python3 --ignore-exist --skip-redis-config-generation --frappe-branch=hotfix"
     run frappe "cp /home/frappe/frappe-bench-settings/Procfile_docker /home/frappe/frappe-bench/Procfile"
     run frappe "cp /home/frappe/frappe-bench-settings/common_site_config_docker.json /home/frappe/frappe-bench/sites/common_site_config.json"
     run frappe "bench set-mariadb-host mariadb"
